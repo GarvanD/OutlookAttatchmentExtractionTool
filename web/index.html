@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Attatchment Search</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Outlook Attatchment Search Tool
+				</span>
+				<label class="label-input100" for="email">Main Email Folder *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="email0" class="input100" type="text" name="email" placeholder="department@aviva.com">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100" for="email">Secondary Email Folder *</label>
+				<div>
+					<input id="email1" class="input100" type="text" name="email" placeholder="sub-department@aviva.com">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100" for="email">Tertiary Email Folder *</label>
+				<div>
+					<input id="email2" class="input100" type="text" name="email" placeholder="Inbox">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100" for="email">Other Email Folder *</label>
+				<div>
+					<input id="email3" class="input100" type="text" name="email" placeholder="Other Folder">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100" for="email">Subject Line Search Term</label>
+				<div>
+					<input id="key_word" class="input100" type="text" name="email" placeholder="Search in subject for..">
+					<span class="focus-input100"></span>
+				</div>
+				<script type="text/javascript" src="/eel.js"></script>
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" onclick="getAttatch()">
+						<span>
+							Submit
+							<i class="zmdi zmdi-arrow-right m-l-8"></i>
+						</span>
+					</button>
+					<script type ="text/javascript">
+						function getAttatch() {
+							var email0 = document.getElementById("email0").value;
+							var email1 = document.getElementById("email1").value;
+							var email2 = document.getElementById("email2").value;
+							var email3 = document.getElementById("email3").value;
+							var key_word = document.getElementById("key_word").value;
+							var check0 = !(email0 == "");
+							var check1 = !(email1 == "");
+							var check2 = !(email2 == "");
+							var check3 = !(email3 == "");
+							eel.getAttatchments(email0,email1,email2,email3,check0,check1, check2, check3,key_word);
+						}
+						eel.expose(updateAttachments);
+					</script>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script type="text/javascript" src="/eel.js"></script>
+
+
+
+</body>
+</html>
